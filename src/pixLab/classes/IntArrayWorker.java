@@ -16,7 +16,7 @@ public class IntArrayWorker
    * Method to return the total 
    * @return the total of the values in the array
    */
-  public int getTotal()
+  public int getTotal() //a for loop is good if you want to change things, and it tells you where you are using the interval counter
   {
     int total = 0;
     for (int row = 0; row < matrix.length; row++)
@@ -33,14 +33,14 @@ public class IntArrayWorker
    * Method to return the total using a nested for-each loop
    * @return the total of the values in the array
    */
-  public int getTotalNested()
+  public int getTotalNested() //a for each loop is good for accumulators (totals) but you can't change anything inside matrix
   {
     int total = 0;
-    for (int[] rowArray : matrix)
+    for (int[] rowArray : matrix) //for each row in the matrix
     {
-      for (int item : rowArray)
+      for (int item : rowArray) //for each item in the row
       {
-        total = total + item;
+        total = total + item; //add the item to the total
       }
     }
     return total;
@@ -100,4 +100,21 @@ public class IntArrayWorker
     }
   }
  
+  
+  public int getCount(int numberToFind)
+  {
+	  int count = 0;
+	  for(int[] row : matrix)
+	  {
+		  for(int item : row)
+		  {
+			  if(item == numberToFind)
+			  {
+				  count++;
+			  }
+		  }
+	  }
+	  //count = matrix[0].length;
+	  return count;
+  }
 }
