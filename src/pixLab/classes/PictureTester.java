@@ -71,7 +71,7 @@ public class PictureTester
   /** Method to test the collage method */
   public static void testCollage()
   {
-    Picture canvas = new Picture("640x480.jpg");
+    Picture canvas = new Picture("seagull.jpg");
     canvas.createCollage();
     canvas.explore();
   }
@@ -113,9 +113,9 @@ public class PictureTester
     //testMirrorHorizontalTtoB();
     //testMirrorTemple();
     //testMirrorArms();
-    testMirrorGull();
+    //testMirrorGull();
     //testMirrorDiagonal();
-    //testCollage();
+    testCollage();
     //testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();

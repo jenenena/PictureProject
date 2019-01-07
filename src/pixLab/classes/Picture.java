@@ -220,6 +220,7 @@ public class Picture extends SimplePicture
   public void mirrorGull()
   {
 	  Pixel[][] pixels = this.getPixels2D();
+	  int basePoint = 483;
 	  Pixel copyPixel = null;
 	  Pixel pastePixel = null;
 	  Pixel pastePixel2 = null;
@@ -237,6 +238,12 @@ public class Picture extends SimplePicture
 	  
   }
   
+  public void crazyGull()
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  Pixel copyPixel = null;
+	  Pixel pastePixel = null;
+  }
   
   /** copy from the passed fromPic to the
     * specified startRow and startCol in the
@@ -272,8 +279,8 @@ public class Picture extends SimplePicture
   /** Method to create a collage of several pictures */
   public void createCollage()
   {
-    Picture flower1 = new Picture("flower1.jpg");
-    Picture flower2 = new Picture("flower2.jpg");
+    Picture flower1 = new Picture("VanGoghHat.jpg");
+    Picture flower2 = new Picture("VanGoghHat.jpg");
     this.copy(flower1,0,0);
     this.copy(flower2,100,0);
     this.copy(flower1,200,0);
@@ -282,7 +289,7 @@ public class Picture extends SimplePicture
     this.copy(flowerNoBlue,300,0);
     this.copy(flower1,400,0);
     this.copy(flower2,500,0);
-    this.mirrorVertical();
+    this.mirrorVerticalLtoR();
     this.write("collage.jpg");
   }
   
