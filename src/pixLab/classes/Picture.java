@@ -124,6 +124,20 @@ public class Picture extends SimplePicture
   }
   
   
+//  public void negate()
+//  {
+//	  Pixel[][] pixels  = this.getPixels2D();
+//	  for (int row = 0; row < pixels.length; row++)
+//	  {
+//		  for (int col = 0; col < pixels[0].length; col++)
+//		  {
+//			  Pixel current = pixels[row][col];
+//			  int red = current.getRed()
+//			  current.setColor()
+//		  }
+//	  }
+//  }
+  
   
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
@@ -202,6 +216,27 @@ public class Picture extends SimplePicture
       }
     }
   }
+  
+  public void mirrorGull()
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  Pixel copyPixel = null;
+	  Pixel pastePixel = null;
+	  Pixel pastePixel2 = null;
+	  for(int row = 225; row < 335; row++)
+	  {
+		  for(int col = 225; col < 335; col++)
+		  {
+			  copyPixel = pixels[row][col];
+			  pastePixel = pixels[row][col + 200];
+			  pastePixel2 = pixels[row - 200][col];
+			  pastePixel.setColor(copyPixel.getColor());
+			  pastePixel2.setColor(copyPixel.getColor());
+		  }
+	  }
+	  
+  }
+  
   
   /** copy from the passed fromPic to the
     * specified startRow and startCol in the
