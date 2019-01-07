@@ -18,16 +18,44 @@ public class IntArrayWorker
    */
   public int getTotal() //a for loop is good if you want to change things, and it tells you where you are using the interval counter
   {
-    int total = 0;
-    for (int row = 0; row < matrix.length; row++)
-    {
-      for (int col = 0; col < matrix[0].length; col++)
-      {
-        total = total + matrix[row][col];
-      }
-    }
-    return total;
+   int total = 0;
+   for (int row = 0; row < matrix.length; row++)
+   {
+     for (int col = 0; col < matrix[0].length; col++)
+     {
+       total = total + matrix[row][col];
+     }
+   }
+   return total;
   }
+  
+  
+  public int getLargest()
+  {
+	  int largest = Integer.MIN_VALUE;
+	  for (int r = 0; r < matrix.length; r++)
+	  {
+		  for (int c = 0; c < matrix[0].length; c++)
+		  {
+			  if (matrix[r][c] > largest)
+			  {
+				  largest = matrix[r][c];
+			  }
+		  }
+	  }
+	  return largest;
+  }
+  
+  public int getColTotal(int col) //if given a parameter in a test you should use it in the code 
+  {
+	  int colTotal = 0;
+   	  for (int i = 0; i < matrix.length; i++)
+   	  {
+   		  colTotal = colTotal + matrix[i][col];
+   	  }
+   	  return colTotal;
+  }
+  
   
   /**
    * Method to return the total using a nested for-each loop
