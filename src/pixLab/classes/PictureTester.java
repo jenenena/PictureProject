@@ -84,6 +84,13 @@ public class PictureTester
     swan.explore();
   }
   
+  public static void testGlitchy()
+  {
+	  Picture pic = new Picture("blueMotorcycle.jpg");
+	  pic.glitchy();
+	  pic.explore();
+  }
+  
   public static void testMirrorGull()
   {
 	  Picture gull = new Picture("seagull.jpg");
@@ -117,7 +124,7 @@ public class PictureTester
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
-    testEdgeDetection();
+    //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
@@ -125,5 +132,6 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
+	  testGlitchy();
   }
 }
