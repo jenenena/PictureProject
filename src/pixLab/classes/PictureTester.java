@@ -1,4 +1,5 @@
 package pixLab.classes;
+import java.awt.Color;
 /**
  * This class contains class (static) methods
  * that will help you test the Picture class 
@@ -79,7 +80,7 @@ public class PictureTester
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
-    Picture swan = new Picture("swan.jpg");
+    Picture swan = new Picture("KennedyRegal.jpg");
     swan.edgeDetection(15);
     swan.explore();
   }
@@ -89,6 +90,17 @@ public class PictureTester
 	  Picture pic = new Picture("blueMotorcycle.jpg");
 	  pic.glitchy();
 	  pic.explore();
+  }
+  
+  public static void testChromokey()
+  {
+	  Picture source = new Picture("KennedyBW.jpg");
+	  Picture replacement = new Picture("KennedyRegal.jpg");
+	  source.explore();
+	  replacement.explore();
+	  source.chromokey(replacement, Color.WHITE);
+	  source.explore();
+	  
   }
   
   public static void testMirrorGull()
@@ -126,12 +138,12 @@ public class PictureTester
     //testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();
-    //testChromakey();
+    testChromokey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
-	  testGlitchy();
+	//testGlitchy();
   }
 }
