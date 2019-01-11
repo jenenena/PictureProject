@@ -111,6 +111,21 @@ public class PictureTester
 	  gull.explore();
   }
   
+  public static void testShiftLeftRight() //////////////
+  { 
+	  Picture gull = new Picture ("VegasOtel.JPG");
+	  gull.shiftLeftRight(20);
+	  gull.explore();
+  }
+  
+  public static void testShiftUpDown()
+  {
+	  Picture gull = new Picture ("VegasOtel.JPG");
+	  gull.shiftUpDown(497589);
+	  gull.explore();
+  }
+  
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -138,12 +153,19 @@ public class PictureTester
     //testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();
-    testChromokey();
+    //testChromokey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
 	//testGlitchy();
+    //testShiftLeftRight();
+    testShiftUpDown();
   }
+  
+  
+  
+  
+  
 }
