@@ -429,19 +429,64 @@ public class Picture extends SimplePicture
   /** Method to create a collage of several pictures */
   public void createCollage()
   {
-    Picture flower1 = new Picture("VanGoghHat.jpg");
-    Picture flower2 = new Picture("VanGoghHat.jpg");
+    Picture flower1 = new Picture("palm.jpg");
+    Picture flower2 = new Picture("goat.jpg");
     this.copy(flower1,0,0);
-    this.copy(flower2,100,0);
+    this.copy(flower2,100,1000);
     this.copy(flower1,200,0);
-    Picture flowerNoBlue = new Picture(flower2);
-    flowerNoBlue.zeroBlue();
-    this.copy(flowerNoBlue,300,0);
     this.copy(flower1,400,0);
     this.copy(flower2,500,0);
-    this.mirrorVerticalLtoR();
+    //this.mirrorVerticalLtoR();
     this.write("collage.jpg");
   }
+  
+  
+  
+  
+  
+  
+  // GOAT!	GOAT!	GOAT!	GOAT!	GOAT!	GOAT!	GOAT!	GOAT!	GOAT!
+  
+  
+  
+  
+  public void goatArt(Picture fromPic, int startRow, int startCol)
+  {
+	  Picture palm = new Picture("palm.jpg");
+	  for(int i = 1; i < 7; i++)
+	  {
+		  this.copy(palm, (int)(Math.random()*200), (int)(Math.random()*600));
+	  }
+	  
+	  Pixel fromPixel = null;
+	    Pixel toPixel = null;
+	    Pixel[][] toPixels = this.getPixels2D();
+	    Pixel[][] fromPixels = fromPic.getPixels2D();
+	    for (int fromRow = 830, toRow = startRow; 
+	         fromRow < 1000 &&
+	         toRow < (startRow + 170); 
+	         fromRow++, toRow++)
+	    {
+	      for (int fromCol = 380, toCol = startCol; 
+	           fromCol < 650 &&
+	           toCol < (startCol + 270);  
+	           fromCol++, toCol++)
+	      {
+	        fromPixel = fromPixels[fromRow][fromCol];
+	        toPixel = toPixels[toRow][toCol];
+	        toPixel.setColor(fromPixel.getColor());
+	      }
+	    }   
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   /** Method to show large changes in color 

@@ -72,10 +72,39 @@ public class PictureTester
   /** Method to test the collage method */
   public static void testCollage()
   {
-    Picture canvas = new Picture("seagull.jpg");
+    Picture canvas = new Picture("goat.jpg");
     canvas.createCollage();
     canvas.explore();
   }
+  
+  
+  
+  
+  
+  
+  public static void testGoatArt()
+  {
+	  Picture canvas = new Picture("goat.jpg");
+	  canvas.goatArt(canvas, 850, (int)(Math.random()*725));
+	  canvas.glitchy();
+	  canvas.explore();
+	  
+	  int maybe = (int)(Math.random()*10);
+	  if(maybe < 5)
+	  {
+		  canvas.mirrorHorizontalTtoB();
+	  }
+	  else
+	  {
+		  canvas.goatArt(canvas, 850, (int)(Math.random()*725));
+	  }
+  }
+  
+  
+  
+  
+  
+  
   
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
@@ -87,7 +116,7 @@ public class PictureTester
   
   public static void testGlitchy()
   {
-	  Picture pic = new Picture("blueMotorcycle.jpg");
+	  Picture pic = new Picture("goat.jpg");
 	  pic.glitchy();
 	  pic.explore();
   }
@@ -161,7 +190,8 @@ public class PictureTester
     //testGetAverageForColumn(0);
 	//testGlitchy();
     //testShiftLeftRight();
-    testShiftUpDown();
+    //testShiftUpDown();
+	testGoatArt();
   }
   
   
