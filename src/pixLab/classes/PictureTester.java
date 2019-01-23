@@ -87,24 +87,38 @@ public class PictureTester
 	  Picture canvas = new Picture("goat.jpg");
 	  canvas.goatArt(canvas, 850, (int)(Math.random()*725));
 	  canvas.glitchy();
-	  canvas.explore();
+	  
 	  
 	  int maybe = (int)(Math.random()*10);
-	  if(maybe < 5)
+	  if(maybe < 3)
 	  {
 		  canvas.mirrorHorizontalTtoB();
+		  
+		  if(maybe < 2)
+		  {
+			  canvas.edgeDetection(15);
+		  }
 	  }
 	  else
 	  {
 		  canvas.goatArt(canvas, 850, (int)(Math.random()*725));
 	  }
+	  
+	  canvas.explore();
   }
   
   
   
   
   
-  
+  public static void testSteganography()
+  {
+	  Picture source = new Picture("goat.jpg");
+	  Picture message = new Picture("KennedyBW.jpg");
+	  source.hidePicture(message);
+	  source.revealPicture();
+	  source.explore();
+  }
   
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
@@ -191,7 +205,8 @@ public class PictureTester
 	//testGlitchy();
     //testShiftLeftRight();
     //testShiftUpDown();
-	testGoatArt();
+	//testGoatArt();
+	testSteganography();
   }
   
   

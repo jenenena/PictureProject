@@ -477,6 +477,7 @@ public class Picture extends SimplePicture
 	        toPixel.setColor(fromPixel.getColor());
 	      }
 	    }   
+	    this.write("goatArt.jpg");
   }
   
   
@@ -489,6 +490,78 @@ public class Picture extends SimplePicture
   
   
   
+  
+  public void hidePicture(Picture message)
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  Pixel[][] hiddenPixels = message.getPixels2D();
+	  
+	  for(int row = 0; row < pixels.length && row < hiddenPixels.length; row++)
+	  {
+		  for(int col = 0; col < pixels[0].length && row < hiddenPixels[0].length; col++)
+		  {
+			  if (hiddenPixels[row][col].colorDistance(Color.WHITE) > 5)
+			  {
+				  if (pixels[row][col].getRed() > 0 && pixels[row][col].getRed() % 2 != 1)  
+				  {
+					  pixels[row][col].setRed(pixels[row][col].getRed() - 1);
+				  }
+			  }
+			  else if (pixels[row][col].getRed() > 0 && pixels[row][col].getRed() % 2 == 1)
+			  {
+				  pixels[row][col].setRed(pixels[row][col].getRed() - 1);
+			  }
+		  }
+	  }
+  }
+  
+  public void revealPicture()
+  {
+	  Pixel [][] pixels = this.getPixels2D();
+	  
+	  for(int row = 0; row < pixels.length; row++)
+	  {
+		  for(int col = 0; col < pixels[0].length; col++)
+		  {
+			  //there is a message to reveal!
+			  if (pixels[row][col].getRed() > 0 && pixels[row][col].getRed() % 2 != 1)
+			  {
+				  pixels[row][col].setColor(Color.CYAN);
+			  }
+			  else if(pixels[row][col].getRed() > 0 && pixels[row][col].getRed() % 2 == 1)
+			  {
+				  pixels[row][col].setColor(Color.MAGENTA);
+			  }
+			  else if(pixels[row][col].getRed() == 0)
+			  {
+				  pixels[row][col].setColor(Color.WHITE);
+			  }
+		  }
+	  }
+	  
+  }
+  
+  public void havingFun()
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  
+	  for (int row = 0; row < pixels.length; row++)
+	  {
+		  for (int col = 0; col < pixels[0].length; col++)
+		  {
+			  if(pixels[row][col].getGreen() > 200)
+			  {
+				  pixels[row][col].setColor(Color.GREEN);
+			  }
+			  else if(pixels[row][col].getRed() > 200)
+			  {
+				  pixels[row][col]
+			  }
+		  }
+	  }
+	                   
+	                   
+	                   
   /** Method to show large changes in color 
     * @param edgeDist the distance for finding edges
     */
